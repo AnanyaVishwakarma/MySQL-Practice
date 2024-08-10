@@ -10,3 +10,9 @@ SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION; //difference between cit
 /*Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name).
 If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.*/
 (SELECT CITY, LENGTH(CITY) AS length FROM STATION  WHERE 1 ORDER BY LENGTH ASC,CITY ASC LIMIT 1) UNION (SELECT CITY, LENGTH(CITY) AS length FROM STATION  WHERE 1 ORDER BY LENGTH DESC,CITY DESC LIMIT 1);
+SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE 'a%' OR CITY LIKE 'e%' OR CITY LIKE 'i%' OR CITY LIKE 'o%' OR CITY LIKE 'u%';// Query to list unique names that STARTS with vowels.
+SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u';// Query to list unique names that ENDS with vowels.
+SELECT DISTINCT CITY
+FROM STATION
+WHERE (LOWER(SUBSTRING(CITY, 1, 1)) IN ('a', 'e', 'i', 'o', 'u'))
+  AND (LOWER(SUBSTRING(CITY, -1, 1)) IN ('a', 'e', 'i', 'o', 'u'));// it lists down the names that starts and ends with vowels

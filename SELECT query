@@ -16,3 +16,15 @@ SELECT DISTINCT CITY
 FROM STATION
 WHERE (LOWER(SUBSTRING(CITY, 1, 1)) IN ('a', 'e', 'i', 'o', 'u'))
   AND (LOWER(SUBSTRING(CITY, -1, 1)) IN ('a', 'e', 'i', 'o', 'u'));// it lists down the names that starts and ends with vowels
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTRING(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u');// query that lists tne names that starts with CONSONANTS.
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTRING(CITY, -1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u');// Query that ends with CONSONANTS
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTRING(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+   OR LOWER(RIGHT(CITY, 1)) NOT IN ('a', 'e', 'i', 'o', 'u');// Query that lists names that either starts or ends both with consonants
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTRING(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+   AND LOWER(RIGHT(CITY, 1)) NOT IN ('a', 'e', 'i', 'o', 'u');// Query that neither starts nor ends with consonants
+//Query the Name of any student in STUDENTS who scored higher than 75 Marks. Order your output by the last three characters of each name. 
+If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID//
+SELECT  Name FROM STUDENTS WHERE MARKS > 75 
+ORDER BY SUBSTRING(Name, LENGTH(Name) - 2, 3) ASC, ID ASC;

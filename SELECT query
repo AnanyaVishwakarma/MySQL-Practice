@@ -28,3 +28,5 @@ WHERE LOWER(SUBSTRING(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
 If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID//
 SELECT  Name FROM STUDENTS WHERE MARKS > 75 
 ORDER BY SUBSTRING(Name, LENGTH(Name) - 2, 3) ASC, ID ASC;
+SELECT name FROM EMPLOYEE  ORDER BY name ASC; // Query to list down in alphabetical order
+SELECT NAME FROM EMPLOYEE WHERE SALARY > 2000 AND MONTHS < 10 ORDER BY EMPLOYEE_ID ASC; // FILTER AND ORDER

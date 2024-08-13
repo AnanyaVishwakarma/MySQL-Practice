@@ -30,3 +30,10 @@ SELECT  Name FROM STUDENTS WHERE MARKS > 75
 ORDER BY SUBSTRING(Name, LENGTH(Name) - 2, 3) ASC, ID ASC;
 SELECT name FROM EMPLOYEE  ORDER BY name ASC; // Query to list down in alphabetical order
 SELECT NAME FROM EMPLOYEE WHERE SALARY > 2000 AND MONTHS < 10 ORDER BY EMPLOYEE_ID ASC; // FILTER AND ORDER
+// query identifying the type of each record in the TRIANGLES table using its three side length
+SELECT CASE 
+WHEN A + B <= C OR A + C <= B OR B + C  <= A THEN "Not A Triangle" 
+WHEN A = B AND B= C AND C= A THEN "Equilateral" 
+WHEN A = B OR B = C OR C = A THEN "Isosceles" 
+ELSE "Scalene" 
+END FROM TRIANGLES;

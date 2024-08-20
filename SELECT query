@@ -37,3 +37,5 @@ WHEN A = B AND B= C AND C= A THEN "Equilateral"
 WHEN A = B OR B = C OR C = A THEN "Isosceles" 
 ELSE "Scalene" 
 END FROM TRIANGLES;
+SELECT P.firstName, P.lastName, a.city, a.state FROM Person P LEFT JOIN Address a ON P.PersonId = a.PersonId;
+SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE salary < (SELECT MAX(salary)FROM Employee);// filtering out the 2nd highest salary

@@ -1,3 +1,7 @@
 select count(*) AS CityCount
 From city
 where POPULATION > 100000;
+[Selecting a total number]
+select SUM(POPULATION) as totalPopulation
+From City
+where District = 'California';

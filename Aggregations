@@ -5,3 +5,7 @@ where POPULATION > 100000;
 select SUM(POPULATION) as totalPopulation
 From City
 where District = 'California';
+[Selecting Averagew population]
+select AVG(population) AS averagePopulation
+from city
+where district = 'California';

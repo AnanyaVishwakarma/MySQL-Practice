@@ -9,3 +9,7 @@ where District = 'California';
 select AVG(population) AS averagePopulation
 from city
 where district = 'California';
+[Rounding off avrage value with the floor()]
+[Selecting Averagew population]
+select floor(AVG(population)) as AveragePopulation
+from City;

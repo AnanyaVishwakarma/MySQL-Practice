@@ -13,3 +13,6 @@ where district = 'California';
 [Selecting Averagew population]
 select floor(AVG(population)) as AveragePopulation
 from City;
+[Finding the difference of a certaing column]
+select max(population) - min(population) as diffPopulation
+from city;

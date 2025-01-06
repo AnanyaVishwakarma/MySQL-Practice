@@ -30,3 +30,7 @@ FROM (
     FROM Employee
 ) AS earnings
 WHERE total_earnings = (SELECT MAX(salary * months) FROM Employee);
+/*Query the following two values from the STATION table:
+
+The sum of all values in LAT_N rounded to a scale of  decimal places.
+The sum of all values in LONG_W rounded to a scale of  decimal places.*/

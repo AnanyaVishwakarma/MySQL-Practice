@@ -38,3 +38,6 @@ select
        Round(Sum(LAT_N), 2) AS lat,
         Round(Sum(LONG_W), 2) AS lon
 From Station;
+//
+SELECT CEIL(ABS(AVG(salary) - AVG(CAST(REPLACE(CAST(salary AS CHAR), '0', '') AS INTEGER)))) AS error
+FROM Employee;

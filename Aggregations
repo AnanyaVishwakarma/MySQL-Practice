@@ -38,6 +38,10 @@ select
        Round(Sum(LAT_N), 2) AS lat,
         Round(Sum(LONG_W), 2) AS lon
 From Station;
-//
+//REPLACE(..., '0', ''): Removes all 0 characters from the string representation of the salary.
+CAST(... AS UNSIGNED): Converts the modified string back to a number.
+AVG(...): Calculates the average for both actual and modified salaries.
+ABS(...): Computes the absolute difference between the two averages.
+CEIL(...): Rounds up to the next integer.//
 SELECT CEIL(ABS(AVG(salary) - AVG(CAST(REPLACE(CAST(salary AS CHAR), '0', '') AS INTEGER)))) AS error
 FROM Employee;

@@ -1,3 +1,5 @@
+
+
 SELECT * from CITY where COUNTRYCODE = "USA" and Population > 100000;
 SELECT NAME from CITY where POPULATION > 120000 and COUNTRYCODE = "USA";
 SELECT * FROM CITY; /*query all attributes in a table*/
@@ -39,3 +41,7 @@ ELSE "Scalene"
 END FROM TRIANGLES;
 SELECT P.firstName, P.lastName, a.city, a.state FROM Person P LEFT JOIN Address a ON P.PersonId = a.PersonId;
 SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE salary < (SELECT MAX(salary)FROM Employee);// filtering out the 2nd highest salary
+// selecting query for more than one column :
+SELECT name, population, area
+from World 
+where population >= 25000000 OR area >= 3000000 ;

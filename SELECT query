@@ -43,3 +43,4 @@ SELECT MAX(salary) AS SecondHighestSalary FROM Employee WHERE salary < (SELECT M
 SELECT name, population, area
 from World 
 where population >= 25000000 OR area >= 3000000 ;
+//Select the names of the customer that are not referred by the customer with id = 2.

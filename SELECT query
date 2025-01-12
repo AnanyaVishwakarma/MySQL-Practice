@@ -50,3 +50,5 @@ where referee_id <> 2 OR referee_id IS NULL;
 // Selecting enums
 SELECT product_id FROM Products
 WHERE low_fats = 'Y' AND recyclable = 'Y';
+SELECT DISTINCT author_id AS id
+FROM Views 

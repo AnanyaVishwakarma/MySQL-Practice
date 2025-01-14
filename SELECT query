@@ -54,3 +54,6 @@ SELECT DISTINCT author_id AS id
 FROM Views 
 WHERE author_id = viewer_id
 ORDER BY id ASC;
+SELECT TWEET_ID 
+FROM TWEETS 
+WHERE LENGTH(CONTENT) > 15;
